@@ -1,0 +1,3 @@
+C:\Users\DiXer\source\repos\BenDexSoftware\BenDexSoftware\Debug\BenDexSoftware.vcxproj.AssemblyReference.cache
+C:\Users\DiXer\source\repos\BenDexSoftware\BenDexSoftware\Debug\BenDexSoftware.MyForm.resources
+C:\Users\DiXer\source\repos\BenDexSoftware\BenDexSoftware\Debug\BenDexSoftware.vcxproj.GenerateResource.cache
