@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include <iostream>
+#include <Windows.h>
+#include <string>
 namespace BOSAIX {
 
 	using namespace System;
@@ -52,6 +54,9 @@ namespace BOSAIX {
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ Exit;
+
+
+	private: String^ file = "";
 
 	protected:
 
@@ -342,7 +347,7 @@ namespace BOSAIX {
 	}
 		   //start Steam
 	private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
-		system("start Steam.lnk");
+		system("start steam.lnk");
 	}
 	private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();

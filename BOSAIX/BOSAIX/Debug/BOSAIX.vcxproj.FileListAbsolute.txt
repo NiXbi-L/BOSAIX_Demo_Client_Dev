@@ -2,3 +2,7 @@ C:\Users\DiXer\source\repos\BOSAIX\BOSAIX\Debug\BOSAIX.vcxproj.AssemblyReference
 C:\Users\DiXer\source\repos\BOSAIX\BOSAIX\Debug\BOSAIX.Login.resources
 C:\Users\DiXer\source\repos\BOSAIX\BOSAIX\Debug\BOSAIX.UserMenu.resources
 C:\Users\DiXer\source\repos\BOSAIX\BOSAIX\Debug\BOSAIX.vcxproj.GenerateResource.cache
+C:\Users\DiXer\Documents\BOSAIX_Demo_Client_Dev\BOSAIX\BOSAIX\Debug\BOSAIX.vcxproj.AssemblyReference.cache
+C:\Users\DiXer\Documents\BOSAIX_Demo_Client_Dev\BOSAIX\BOSAIX\Debug\BOSAIX.Login.resources
+C:\Users\DiXer\Documents\BOSAIX_Demo_Client_Dev\BOSAIX\BOSAIX\Debug\BOSAIX.UserMenu.resources
+C:\Users\DiXer\Documents\BOSAIX_Demo_Client_Dev\BOSAIX\BOSAIX\Debug\BOSAIX.vcxproj.GenerateResource.cache
