@@ -172,6 +172,7 @@ namespace BOSAIX {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Enter);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";

@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Active_Chek.h"
 #include <iostream>
 #include <Windows.h>
 #include <string>
@@ -56,7 +57,9 @@ namespace BOSAIX {
 	private: System::Windows::Forms::Button^ Exit;
 
 
-	private: String^ file = "";
+	private: bool ghg = 0;
+	private: System::Windows::Forms::Button^ Pay;
+	private: System::Windows::Forms::Button^ Chkk;
 
 	protected:
 
@@ -91,6 +94,8 @@ namespace BOSAIX {
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Exit = (gcnew System::Windows::Forms::Button());
+			this->Pay = (gcnew System::Windows::Forms::Button());
+			this->Chkk = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -208,6 +213,7 @@ namespace BOSAIX {
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox4->TabIndex = 10;
 			this->pictureBox4->TabStop = false;
+			this->pictureBox4->Click += gcnew System::EventHandler(this, &UserMenu::pictureBox4_Click);
 			// 
 			// pictureBox5
 			// 
@@ -278,6 +284,40 @@ namespace BOSAIX {
 			this->Exit->UseVisualStyleBackColor = true;
 			this->Exit->Click += gcnew System::EventHandler(this, &UserMenu::Exit_Click);
 			// 
+			// Pay
+			// 
+			this->Pay->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Pay.BackgroundImage")));
+			this->Pay->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->Pay->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Pay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Pay->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13, System::Drawing::FontStyle::Bold));
+			this->Pay->ForeColor = System::Drawing::SystemColors::Control;
+			this->Pay->Location = System::Drawing::Point(141, 205);
+			this->Pay->Name = L"Pay";
+			this->Pay->Size = System::Drawing::Size(166, 37);
+			this->Pay->TabIndex = 17;
+			this->Pay->Text = L"Пополнить баланс";
+			this->Pay->UseVisualStyleBackColor = true;
+			this->Pay->Visible = false;
+			this->Pay->Click += gcnew System::EventHandler(this, &UserMenu::Pay_Click);
+			// 
+			// Chkk
+			// 
+			this->Chkk->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Chkk.BackgroundImage")));
+			this->Chkk->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->Chkk->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Chkk->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Chkk->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13, System::Drawing::FontStyle::Bold));
+			this->Chkk->ForeColor = System::Drawing::SystemColors::Control;
+			this->Chkk->Location = System::Drawing::Point(141, 255);
+			this->Chkk->Name = L"Chkk";
+			this->Chkk->Size = System::Drawing::Size(166, 37);
+			this->Chkk->TabIndex = 18;
+			this->Chkk->Text = L"Активировать чек";
+			this->Chkk->UseVisualStyleBackColor = true;
+			this->Chkk->Visible = false;
+			this->Chkk->Click += gcnew System::EventHandler(this, &UserMenu::Chkk_Click);
+			// 
 			// UserMenu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -286,6 +326,8 @@ namespace BOSAIX {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(121)), static_cast<System::Int32>(static_cast<System::Byte>(1)),
 				static_cast<System::Int32>(static_cast<System::Byte>(184)));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->Chkk);
+			this->Controls->Add(this->Pay);
 			this->Controls->Add(this->Exit);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox7);
@@ -302,6 +344,7 @@ namespace BOSAIX {
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox3);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"UserMenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BOSAIX ver 0.1 beta";
@@ -352,5 +395,27 @@ namespace BOSAIX {
 	private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}
+private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!ghg) {
+		ghg = 1;
+		this->Balance->Visible = false;
+		this->Time->Visible = false;
+		this->Pay->Visible = true;
+		this->Chkk->Visible = true;
+	}
+	else{
+		ghg = 0;
+		this->Balance->Visible = true;
+		this->Time->Visible = true;
+		this->Pay->Visible = false;
+		this->Chkk->Visible = false;
+	}
+}
+private: System::Void Pay_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Chkk_Click(System::Object^ sender, System::EventArgs^ e) {
+	Active_Chek^ act = gcnew Active_Chek();
+	act->Show();
+}
 };
 }
